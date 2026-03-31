@@ -1,0 +1,115 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+:root {
+    --sidebar-width: 125px;
+    --sidebar-hover-width: 250px;
+
+    --grid-template-columns: var(--sidebar-width) 10fr;
+    --grid-template-rows: 1fr 5fr 1fr;
+
+    --slider-width: 800px;
+    --slider-height: 400px;
+    --slider-img-width: 700px;
+
+    --footer-horizontal-padding: 10vw;
+    --footer-vertical-padding: 10vh;
+    --footer-container-margin: 10vw;
+}
+
+@media (max-width: 800px) {
+    :root {
+        --sidebar-width: 75px;
+        --sidebar-hover-width: 75vw;
+
+
+        --grid-template-columns: var(--sidebar-width) 5fr;
+        --grid-template-rows: 1fr 5fr 0.5fr;
+
+        --slider-width: 350px;
+        --slider-height: 150px;
+        --slider-img-width: 250px;
+    }
+}
+
+.site {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-areas: 
+    "sidebar header"
+    "sidebar main"
+    "sidebar footer";
+    grid-template-columns: var(--grid-template-columns);
+    grid-template-rows: var(--grid-template-rows);
+}
+
+.header {
+    grid-area: header;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header h1 {
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+.sidebar {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: var(--sidebar-width);
+    background-color: red;
+    transition: width 0.5s ease;
+}
+.sidebar:hover {
+    width: var(--sidebar-hover-width);
+}
+
+.main {
+    grid-area: main;
+    background-color: rgb(231, 231, 231);
+}
+
+.swiper {
+  width: var(--slider-width);
+  height: var(--slider-height);
+}
+
+.swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    width: var(--slider-img-width);
+    height: var(--slider-height);
+}
+
+.footer {
+    grid-area: footer;
+    background-color: rgb(43, 43, 43);
+
+    display: flex;
+    justify-content: space-between;
+
+    padding-left: var(--footer-horizontal-padding);
+    padding-right: var(--footer-horizontal-padding);
+    padding-top: var(--footer-vertical-padding);
+    padding-bottom: var(--footer-vertical-padding);
+}
+
+.footer .container {
+    margin-left: var(--footer-container-margin);
+    margin-right: var(--footer-container-margin);
+}
