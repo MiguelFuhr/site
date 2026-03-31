@@ -5,6 +5,12 @@ html, body {
 }
 
 :root {
+    --header-title-font-size: 50px;
+
+    --footer-title-font-size: 35px;
+    --social-title-font-size: 30px;
+    --icons-font-size: 30px;
+
     --sidebar-width: 125px;
     --sidebar-hover-width: 250px;
 
@@ -15,30 +21,45 @@ html, body {
     --slider-height: 400px;
     --slider-img-width: 700px;
 
-    --footer-padding: 100px;
+    --footer-padding: 50px;
     --footer-container-margin: 200px;
 
-    --icons-size: 40px;
+    --icons-left-margin: 20px;
+    --icons-bg-size: 40px;
     --icons-gap: 10px;
 }
 
 @media (max-width: 800px) {
     :root {
+        --header-title-font-size: 30px;
+
+        --footer-title-font-size: 25px;
+        --social-title-font-size: 22px;
+        --icons-font-size: 22px;
+
         --sidebar-width: 75px;
         --sidebar-hover-width: 75vw;
 
         --grid-template-columns: var(--sidebar-width) 5fr;
-        --grid-template-rows: 1fr 5fr 0.5fr;
+        --grid-template-rows: 75px 5fr 0.5fr;
 
         --slider-width: 350px;
         --slider-height: 150px;
         --slider-img-width: 250px;
+
+        --footer-padding: 10px;
+        --footer-container-margin: 20px;
+
+        --icons-left-margin: 20px;
+        --icons-bg-size: 30px;
+        --icons-gap: 10px;
     }
 }
 
 .site {
     width: 100vw;
     height: 100vh;
+
     display: grid;
     grid-template-areas: 
     "sidebar header"
@@ -51,6 +72,7 @@ html, body {
 .header {
     grid-area: header;
     background-color: black;
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,6 +81,7 @@ html, body {
     color: white;
     margin: 0;
     padding: 0;
+    font-size: var(--header-title-font-size);
 }
 
 .sidebar {
@@ -66,9 +89,12 @@ html, body {
     position: fixed;
     top: 0;
     left: 0;
+
     height: 100vh;
     width: var(--sidebar-width);
+
     background-color: red;
+
     transition: width 0.5s ease;
 }
 .sidebar:hover {
@@ -81,15 +107,15 @@ html, body {
 }
 
 .swiper {
-  width: var(--slider-width);
-  height: var(--slider-height);
+    width: var(--slider-width);
+    height: var(--slider-height);
 }
 
 .swiper-slide {
-    text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 img {
@@ -111,6 +137,7 @@ img {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
+
     width: 100%;
 
     margin-left: var(--footer-container-margin);
@@ -122,10 +149,18 @@ img {
     justify-content: space-between;
 }
 
+.footer .container .info-row .title {
+    font-size: var(--footer-title-font-size);
+}
+
+.footer .container .info-row .social .title {
+    font-size: var(--social-title-font-size);
+}
+
 .footer .container .info-row .social .links {
     display: flex;
-    flex-direction: row;
     gap: var(--icons-gap);
+    margin-left: var(--icons-left-margin);
 }
 
 .footer .container .info-row .social .links i {
@@ -133,13 +168,13 @@ img {
     justify-content: center;
     align-items: center;
 
-    width: var(--icons-size);
-    height: var(--icons-size);
+    width: var(--icons-bg-size);
+    height: var(--icons-bg-size);
 
     border-radius: 50%;
     background-color: white;
     
-    font-size: xx-large;
+    font-size: var(--icons-font-size);
 }
 
 .footer .container .info-columns {
