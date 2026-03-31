@@ -14,7 +14,7 @@ html, body {
     --sidebar-width: 125px;
     --sidebar-hover-width: 250px;
 
-    --grid-template-columns: var(--sidebar-width) 10fr;
+    --grid-template-columns: var(--sidebar-width) 1fr;
     --grid-template-rows: 150px 5fr 1fr;
 
     --slider-width: 800px;
@@ -40,7 +40,7 @@ html, body {
         --sidebar-width: 75px;
         --sidebar-hover-width: 75vw;
 
-        --grid-template-columns: var(--sidebar-width) 5fr;
+        --grid-template-columns: var(--sidebar-width) 1fr;
         --grid-template-rows: 75px 5fr 0.5fr;
 
         --slider-width: 350px;
@@ -80,7 +80,6 @@ html, body {
 .header h1 {
     color: white;
     margin: 0;
-    padding: 0;
     font-size: var(--header-title-font-size);
 }
 
@@ -90,7 +89,7 @@ html, body {
     top: 0;
     left: 0;
 
-    height: 100vh;
+    height: 100vh; /* Remover */
     width: var(--sidebar-width);
 
     background-color: red;
@@ -104,6 +103,7 @@ html, body {
 .main {
     grid-area: main;
     background-color: rgb(231, 231, 231);
+    height: 100vh;
 }
 
 .swiper {
