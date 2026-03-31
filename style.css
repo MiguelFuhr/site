@@ -9,22 +9,23 @@ html, body {
     --sidebar-hover-width: 250px;
 
     --grid-template-columns: var(--sidebar-width) 10fr;
-    --grid-template-rows: 1fr 5fr 1fr;
+    --grid-template-rows: 150px 5fr 1fr;
 
     --slider-width: 800px;
     --slider-height: 400px;
     --slider-img-width: 700px;
 
-    --footer-horizontal-padding: 10vw;
-    --footer-vertical-padding: 10vh;
-    --footer-container-margin: 10vw;
+    --footer-padding: 100px;
+    --footer-container-margin: 200px;
+
+    --icons-size: 40px;
+    --icons-gap: 10px;
 }
 
 @media (max-width: 800px) {
     :root {
         --sidebar-width: 75px;
         --sidebar-hover-width: 75vw;
-
 
         --grid-template-columns: var(--sidebar-width) 5fr;
         --grid-template-rows: 1fr 5fr 0.5fr;
@@ -103,13 +104,50 @@ img {
     display: flex;
     justify-content: space-between;
 
-    padding-left: var(--footer-horizontal-padding);
-    padding-right: var(--footer-horizontal-padding);
-    padding-top: var(--footer-vertical-padding);
-    padding-bottom: var(--footer-vertical-padding);
+    padding: var(--footer-padding);
 }
 
 .footer .container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+
     margin-left: var(--footer-container-margin);
     margin-right: var(--footer-container-margin);
+}
+
+.footer .container .info-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .container .info-row .social .links {
+    display: flex;
+    flex-direction: row;
+    gap: var(--icons-gap);
+}
+
+.footer .container .info-row .social .links i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: var(--icons-size);
+    height: var(--icons-size);
+
+    border-radius: 50%;
+    background-color: white;
+    
+    font-size: xx-large;
+}
+
+.footer .container .info-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer .container .column {
+    display: flex;
+    flex-direction: column;
 }
