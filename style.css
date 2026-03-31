@@ -2,6 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
     border: 0;
+    white-space: nowrap;
 }
 
 :root {
@@ -22,7 +23,7 @@ html, body {
     --slider-img-width: 700px;
 
     --footer-padding: 50px;
-    --footer-container-margin: 200px;
+    --footer-container-margin: 100px;
 
     --icons-left-margin: 20px;
     --icons-bg-size: 40px;
@@ -33,9 +34,9 @@ html, body {
     :root {
         --header-title-font-size: 30px;
 
-        --footer-title-font-size: 25px;
-        --social-title-font-size: 22px;
-        --icons-font-size: 22px;
+        --footer-title-font-size: 20px;
+        --social-title-font-size: 17px;
+        --icons-font-size: 20px;
 
         --sidebar-width: 75px;
         --sidebar-hover-width: 75vw;
@@ -47,10 +48,10 @@ html, body {
         --slider-height: 150px;
         --slider-img-width: 250px;
 
-        --footer-padding: 10px;
-        --footer-container-margin: 20px;
+        --footer-padding: 5px;
+        --footer-container-margin: 0px;
 
-        --icons-left-margin: 20px;
+        --icons-left-margin: 0px;
         --icons-bg-size: 30px;
         --icons-gap: 10px;
     }
@@ -89,7 +90,7 @@ html, body {
     top: 0;
     left: 0;
 
-    height: 100vh; /* Remover */
+    height: 100%;
     width: var(--sidebar-width);
 
     background-color: red;
@@ -103,7 +104,7 @@ html, body {
 .main {
     grid-area: main;
     background-color: rgb(231, 231, 231);
-    height: 100vh;
+    height: 100vh; /* Remover */
 }
 
 .swiper {
