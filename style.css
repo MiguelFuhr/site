@@ -12,10 +12,13 @@ html, body {
     --social-title-font-size: 30px;
     --icons-font-size: 30px;
 
+    --sidebar-font-size: 25px;
+
     --sidebar-width: 125px;
     --sidebar-height: 100vh;
     --sidebar-hover-width: 250px;
-    --sidebar-hover-height: 100vh;
+    --sidebar-hover-height: var(--sidebar-height);
+    --sidebar-flex-direction: column;
 
     --grid-template-area: 
         "sidebar header"
@@ -43,10 +46,14 @@ html, body {
         --social-title-font-size: 17px;
         --icons-font-size: 20px;
 
+        --sidebar-font-size: 15px;
+
         --sidebar-width: 100vw;
         --sidebar-height: 50px;
-        --sidebar-hover-width: 100vw;
-        --sidebar-hover-height: 150px;
+        --sidebar-hover-width: var(--sidebar-width);
+        --sidebar-hover-height: var(--sidebar-height);
+        --sidebar-flex-direction: row;
+        --sidebar-justify-content: space-around;
 
         --grid-template-area: 
         "sidebar"
@@ -105,9 +112,20 @@ html, body {
 
     transition: width 0.5s ease, height 0.5s ease;
 }
+
 .sidebar:hover {
     width: var(--sidebar-hover-width);
     height: var(--sidebar-hover-height);
+}
+
+.sidebar .container {
+    display: flex;
+    flex-direction: var(--sidebar-flex-direction);
+    justify-content: var(--sidebar-justify-content);
+}
+
+.sidebar .container h2 {
+    font-size: var(--sidebar-font-size);
 }
 
 .main {
