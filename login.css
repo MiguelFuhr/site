@@ -1,0 +1,112 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    white-space: nowrap;
+}
+
+:root {
+    --form-box-width: 500px;
+    --form-box-height: 500px;
+
+    --form-box-border-radius: 20px;
+
+    --input-group-margin: 10px;
+
+    --input-width: 300px;
+    --input-height: 35px;
+
+    --button-width: 250px;
+    --button-height: 50px;
+
+    --background-color: wheat;
+}
+
+@media (max-width: 900px) {
+    :root {
+        --form-box-width: 100vw;
+        --form-box-height: 100vh;
+
+        --form-box-border-radius: 0px;
+
+        --input-group-margin: 10px;
+
+        --input-width: 300px;
+        --input-height: 35px;
+
+        --button-width: 250px;
+        --button-height: 50px;
+
+        --background-color: wheat;
+    }
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .form-box {
+    width: var(--form-box-width);
+    height: var(--form-box-height);
+
+    border-radius: var(--form-box-border-radius);
+    background-color: var(--background-color);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .form-box form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .form-box form button {
+    width: var(--button-width);
+    height: var(--button-height);
+
+    background-color: black;
+    border-radius: 5px;
+    border: 0;
+    color: white;
+}
+
+.container .form-box form .input-group {
+    position: relative;
+    margin: var(--input-group-margin);
+}
+
+.container .form-box form .input-group label {
+    position: absolute;
+    pointer-events: none;
+    transform: translateY(-50%);
+    top: 50%;
+    left: 10px;
+    padding: 0 5px;
+    transition: 0.3s;
+}
+
+.container .form-box form .input-group input {
+    width: var(--input-width);
+    height: var(--input-height);
+
+    outline: none;
+    border: 1px solid gray;
+    background: transparent;
+    border-radius: 5px;
+}
+
+.container .form-box form .input-group input:focus~label,
+.container .form-box form .input-group input:valid~label {
+    top: 0;
+    background-color: var(--background-color);
+}
