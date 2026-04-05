@@ -126,6 +126,7 @@ html, body {
 
 .sidebar .container h2 {
     font-size: var(--sidebar-font-size);
+    cursor: pointer;
 }
 
 .main {
