@@ -61,6 +61,12 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    display: none;    
+}
+
+.container .form-box.active {
+    display: flex;
 }
 
 .container .form-box form {
@@ -68,6 +74,16 @@ html, body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.container .form-box form a {
+    text-decoration: none;
+    color: black;
+}
+
+.container .form-box form p a {
+    text-decoration: underline;
+    color: black;
 }
 
 .container .form-box form button {
@@ -78,6 +94,8 @@ html, body {
     border-radius: 5px;
     border: 0;
     color: white;
+
+    cursor: pointer;
 }
 
 .container .form-box form .input-group {
